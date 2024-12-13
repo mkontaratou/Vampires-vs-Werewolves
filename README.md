@@ -1,7 +1,7 @@
 # Vampire vs Werewolves
 
 ## About
-This project involves developing a heuristic. to play the Vampire vs Werewolves game. The AI uses strategic algorithms to control either Vampires or Werewolves, aiming to dominate the grid-based universe by converting humans and defeating the opposing species. The project tests your ability to implement effective AI strategies while considering opponent moves and game mechanics.
+This project involves developing a heuristic to play the Vampire vs Werewolves game. The AI uses strategic algorithms to control either Vampires or Werewolves, aiming to dominate the grid-based universe by converting humans and defeating the opposing species. The project tests your ability to implement effective AI strategies while considering opponent moves and game mechanics.
 
 ## Rules: 
 Universe Representation
