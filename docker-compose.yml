@@ -1,0 +1,53 @@
+version: "3.8"
+
+# services:
+#   server:
+#     container_name: go-server
+#     image: twilight
+#     build:
+#       context: ./go-server
+#     volumes:
+#       - ./go-server/maps/:/maps
+#     command: -map ./maps/testmap.xml
+#     ports:
+#       - 8080:8080
+#       - 5555:5555
+
+
+services:
+  server:
+    container_name: go-server
+    image: twilight
+    build:
+      context: ./go-server
+    volumes:
+      - ./go-server/maps:/maps
+    command: -map /maps/testmap.xml
+    ports:
+      - 8080:8080
+      - 5555:5555
+
+
+#  player_1:
+#    image: player
+#    # tty: true
+#    container_name: player_1
+#    volumes:
+#      - ./:/app
+#    build:
+#      context: ./
+#    command: python3 -m main go-server 5555 a
+#    depends_on:
+#      - server
+#
+#  player_2:
+#    container_name: player_2
+#    # tty: true
+#    image: player
+#    volumes:
+#      - ./:/app
+#    build:
+#      context: ./
+#    command: python3 -m main go-server 5555 b
+#    depends_on:
+#      - server
