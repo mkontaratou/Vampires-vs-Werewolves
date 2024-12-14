@@ -1,4 +1,4 @@
-#!/Users/maria_kontaratou/Documents/Vamps.vs.wolves_agent-master/venv/bin/python3.12
+#!/Users/maria_kontaratou/Documents/vampires-vs-werewolves/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys

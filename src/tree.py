@@ -25,7 +25,6 @@ class Tree:
             return
         else:
             find_children(map, self.root)
-
             self.build_tree(self.root, depth - 1)
 
     def build_tree(self, parent: Node, depth):
@@ -75,7 +74,6 @@ def new_maps(game_map: GameMap, moves):
     nodes = []
     for move in moves:
         new_map = game_map.generate_updated_map(move)
-
         nodes.append(new_map)
     return nodes
 

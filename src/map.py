@@ -89,7 +89,7 @@ class GameMap:
 
     def display_state(self):
         print("---- HUMANS ----\n", self.humans_state)
-        print("---- VAMPS ----n", self.vamps_state)
+        print("---- VAMPS ----\n", self.vamps_state)
         print("---- WOLVES ----\n", self.wolves_state)
 
         
@@ -235,6 +235,7 @@ class GameMap:
 
 
 ####### BATTLE MODE AND RANDOM BATTLE ########
+
 def calculate_small_attacker_probability(e1: int, e2: int) -> float:
 
     return e1 / (2 * e2)
