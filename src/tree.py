@@ -44,18 +44,31 @@ class Tree:
                 find_children(child.state, child)
                 self.build_tree(child, depth - 1)
 
-    def print_tree(self, node=None, prefix=""):
-        
+    def print_tree(self, node=None, prefix="", depth=0, is_last=True):
         if node is None:
             node = self.root
 
         if isinstance(node, Node):
+            # Define connectors for the tree
+            branch = "└── " if is_last else "├── "
+            child_prefix = "    " if is_last else "│   "
+            
+            # Extract state information for printing
+            current_pos = node.state.get_current_pos()
+            vamp_count = sum(node.state.vamps_state.values())
+            wolf_count = sum(node.state.wolves_state.values())
+            human_count = sum(node.state.humans_state.values())
 
-            connector = "|-- " if node.children else "-- "
-            print(f"{prefix}{connector}Evaluated game state: {node.value} for position: {node.state.get_current_pos()[0]}")
+            # Print the node information
+            print(f"{prefix}{branch}Depth {depth}: Position {current_pos[0] if current_pos else 'N/A'} | "
+                f"Vampires: {vamp_count} | Wolves: {wolf_count} | Humans: {human_count} | "
+                f"Value: {node.value}")
 
-            for child in node.children:
-                self.print_tree(child, prefix + "    ")
+            # Recursively print children with updated prefix
+            child_count = len(node.children)
+            for i, child in enumerate(node.children):
+                self.print_tree(child, prefix + child_prefix, depth + 1, i == child_count - 1)
+
 
 
 def find_children(game_map: GameMap, parent: Node):
